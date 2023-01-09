@@ -3,6 +3,8 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\UsuariosController;
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -14,3 +16,12 @@ use Illuminate\Support\Facades\Route;
 |
 git remote add origin https://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@github.com/edgarmm97/api-taxi.git
 */
+
+Route::prefix('usuario')->group(function () {
+
+    Route::post('/create', [UsuariosController::class, 'storage']);
+
+    Route::delete('/delete', [UsuariosController::class, 'destroy']);
+
+});
+
