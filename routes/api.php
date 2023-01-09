@@ -12,8 +12,5 @@ use Illuminate\Support\Facades\Route;
 | routes are loaded by the RouteServiceProvider within a group which
 | is assigned the "api" middleware group. Enjoy building your API!
 |
+git remote add origin https://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@github.com/edgarmm97/api-taxi.git
 */
-
-Route::get('/saludo', function(Request $request){
-    return response()->json('Hola mundo');
-});
