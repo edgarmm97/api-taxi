@@ -23,6 +23,15 @@ class Unidad extends Model
         'deleted_at'
     ];
 
+    protected $hidden = [
+        'id_unidad',
+        'qr_vehiculo',
+        'created_at',
+        'updated_at',
+        'is_deleted',
+        'deleted_at'
+    ];
+
     protected $table = 'cat_unidad';
     public $incrementing = true;
     protected $primariKey = 'id_unidad';

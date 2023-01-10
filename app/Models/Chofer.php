@@ -27,6 +27,17 @@ class Chofer extends Model
         'num_telefono'
     ];
 
+    protected $hidden = [
+        'id_chofer',
+        'vencimiento_tarjeton',
+        'vencimiento_licencia',
+        'qr_tarjeton',
+        'created_at',
+        'updated_at',
+        'deleted_at',
+        'is_deleted',
+    ];
+
     protected $table = 'cat_chofer';
     public $incrementing = true;
     protected $primariKey = 'id_chofer';
