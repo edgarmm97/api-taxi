@@ -27,7 +27,19 @@ class Usuario extends Model
         'sexo'
     ];
 
+    protected $hidden = [
+        'id_usuario',
+        'contrasenia',
+        'is_deleted',
+        'is_activo',
+        'login_at',
+        'created_at',
+        'updated_at',
+        'deleted_at',
+    ];
+
     protected $table = 'cat_usuario';
     public $incrementing = true;
     protected $primariKey = 'id_usuario';
+    
 }
