@@ -21,7 +21,13 @@ Route::prefix('usuario')->group(function () {
 
     Route::post('/create', [UsuariosController::class, 'storage']);
 
-    Route::delete('/delete', [UsuariosController::class, 'destroy']);
+    Route::delete('/delete', [UsuariosController::class, 'destroy'])->middleware('jwt');
+
+});
+
+Route::prefix('autenticacion')->group(function(){
+
+    Route::post('/usuario/login', [UsuariosController::class, 'login']);
 
 });
 
