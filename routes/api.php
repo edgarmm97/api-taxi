@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\UsuariosController;
+use App\Http\Controllers\ChoferesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,6 +29,16 @@ Route::prefix('usuario')->group(function () {
 Route::prefix('autenticacion')->group(function(){
 
     Route::post('/usuario/login', [UsuariosController::class, 'login']);
+    
+    Route::post('/chofer/login', [ChoferesController::class, 'login_chofer']);
+
+    Route::post('/chofer/logout', [ChoferesController::class, 'logout'])->middleware('jwt');
+
+});
+
+Route::prefix('chofer')->group(function(){
+
+    Route::post('/create',[ChoferesController::class, 'storage']);
 
 });
 

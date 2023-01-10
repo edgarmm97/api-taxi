@@ -35,7 +35,7 @@ class UsuariosController extends Controller{
 
         if($existeUsuario){
 
-            return response()->json(["msg" => "El correo electrónico ya está en uso"], 200);
+            return response()->json(["msg" => "El correo electrónico ya está en uso"], 400);
 
         }
 

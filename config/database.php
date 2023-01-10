@@ -43,6 +43,15 @@ return [
             'foreign_key_constraints' => env('DB_FOREIGN_KEYS', true),
         ],
 
+        'mysql2' => [
+            'driver' => 'mysql',
+            'host' => '10.45.110.122',
+            'port' => '3306',
+            'database' => 'gafetesenlinea',
+            'username' => 'app',
+            'password' => '36$41#9',
+        ],
+
         'mysql' => [
             'driver' => 'mysql',
             'url' => env('DATABASE_URL'),
