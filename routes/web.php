@@ -17,6 +17,3 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/send-event', function(){
-    broadcast(new \App\Events\HelloWorld());
-});

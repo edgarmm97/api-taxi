@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\UsuariosController;
 use App\Http\Controllers\ChoferesController;
-
+use App\Http\Controllers\ViajeController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -24,6 +24,8 @@ Route::prefix('usuario')->group(function () {
 
     Route::delete('/delete', [UsuariosController::class, 'destroy'])->middleware('jwt');
 
+    Route::post('/solicitar-unidad', [ViajeController::class, 'solicitarUnidad'])->middleware('jwt');
+
 });
 
 Route::prefix('autenticacion')->group(function(){
@@ -33,6 +35,8 @@ Route::prefix('autenticacion')->group(function(){
     Route::post('/chofer/login', [ChoferesController::class, 'login_chofer']);
 
     Route::post('/chofer/logout', [ChoferesController::class, 'logout'])->middleware('jwt');
+
+    Route::post('/chofer/aceptar-viaje', [ViajeController::class, 'aceptarViaje'])->middleware('jwt');
 
 });
 

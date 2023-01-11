@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Broadcast;
 use App\Events\NewMessage;
-
+use App\Models\Solicitud;
 /*
 |--------------------------------------------------------------------------
 | Broadcast Channels
@@ -18,6 +18,8 @@ Broadcast::channel('App.Models.User.{id}', function ($user, $id) {
     return (int) $user->id === (int) $id;
 });
 
-Broadcast::channel('chat', function ($message) {
+
+ 
+Broadcast::channel('solicitudes.{solicitudId}', function ($orderId) {
     return true;
 });
